@@ -110,12 +110,12 @@ class DBManager:
             return json_result
 
 # DELETE
-    def delete_task(hr_id, user_id):
+    def delete_task(task, user_id):
         conn = DBManager.connect()
         try:
             cur = conn.cursor(cursor_factory=RealDictCursor)
-            query = """ DELETE FROM todo WHERE hr_id = %(hi)s AND user_id = %(ui)s """
-            values = {'hi': hr_id, 'ui': user_id}
+            query = """ DELETE FROM todo WHERE task = %(t)s AND user_id = %(ui)s """
+            values = {'ui': user_id, 't': task}
             dump = [{'Message': 'Success to delete record'}]
             cur.execute(query, values)
             conn.commit()

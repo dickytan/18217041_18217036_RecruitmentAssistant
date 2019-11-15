@@ -6,8 +6,7 @@ app = Flask(__name__)
 
 @app.route('/task', methods=['GET'])
 def task():
-    if request.method == 'GET':
-        resp = make_response(DBManager.get_all_tasks(), 200)
+    resp = make_response(DBManager.get_all_tasks(), 200)
     resp.mimetype = "application/json"
     return resp
 
@@ -19,20 +18,24 @@ def taskhr(hr_id):
     return resp
 
 
-@app.route('/task/hrid/<hr_id>/uid/<user_id>', methods=['POST', 'PUT', 'GET', 'DELETE'])
+@app.route('/task/hrid/<hr_id>/uid/<user_id>', methods=['POST', 'PUT', 'GET'])
 def task_hrid_uid(hr_id, user_id):
     if request.method == 'GET':
         resp = make_response(
             DBManager.get_all_tasks_by_hrid_userid(hr_id, user_id), 200)
-    elif request.method == 'DELETE':
-        resp = make_response(DBManager.delete_task(hr_id, user_id), 200)
     elif request.method == 'POST':
-        print(request.get_json())
         resp = make_response(DBManager.add_task(
             request.get_json(), hr_id, user_id), 200)
     elif request.method == 'PUT':
         resp = make_response(DBManager.update_task(
             request.get_json(), hr_id, user_id), 200)
+    resp.mimetype = "application/json"
+    return resp
+
+
+@app.route('/task/<task>/uid/<user_id>', methods=['DELETE'])
+def task_uid_task(task, user_id):
+    resp = make_response(DBManager.delete_task(task, user_id), 200)
     resp.mimetype = "application/json"
     return resp
 
