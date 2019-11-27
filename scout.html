@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Choose Option</title>
+
+<!--    Bootstrap-->
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!--    Custom CSS-->
+    <link rel="stylesheet" href="style/main.css">
+
+<body id="bs-override">
+
+<div class="bg-color-half"></div>
+<header>
+
+</header>
+
+<main>
+    <div class="center">
+        <p class="big-font hfont text-white text-center">To-Do List</p>
+    </div>
+
+    <div class="d-flex justify-content-around" style="margin : 250px 200px 0 200px">
+        <button onclick="showRegion()" class="ag-card-md d-flex justify-content-center align-items-center">
+            <p class="text-center medium-font pfont">Region</p>
+        </button>
+        <button onclick="showEducation()" class="ag-card-md d-flex justify-content-center align-items-center">
+            <p class="text-center medium-font pfont">Education</p>
+        </button>
+    </div>
+
+        <div class="d-flex justify-content-around" id="region" style="margin : 50px 200px 0 200px">
+            <a href="scout-detail.html?r=1" class="ag-card-sm d-flex justify-content-center align-items-center">
+                <p class="text-center small-font pfont">Jakarta</p>
+            </a>
+            <a href="scout-detail.html?r=2" class="ag-card-sm d-flex justify-content-center align-items-center">
+                <p class="text-center small-font pfont">Bandung</p>
+            </a>
+            <a href="scout-detail.html?r=3" class="ag-card-sm d-flex justify-content-center align-items-center">
+                <p class="text-center small-font pfont">Banten</p>
+            </a>
+        </div>
+
+        <div class="d-flex justify-content-around none" id="education" style="margin : 50px 200px 0 200px">
+            <a href="scout-detail.html?e=1" class="ag-card-sm d-flex justify-content-center align-items-center">
+                <p class="text-center small-font pfont">ITB</p>
+            </a>
+            <a href="scout-detail.html?e=2" class="ag-card-sm d-flex justify-content-center align-items-center">
+                <p class="text-center small-font pfont">Binus</p>
+            </a>
+            <a href="scout-detail.html?e=3" class="ag-card-sm d-flex justify-content-center align-items-center">
+                <p class="text-center small-font pfont">UI</p>
+            </a>
+        </div>
+
+
+</main>
+
+<footer>
+</footer>
+
+<script>
+    var e = document.getElementById('education');
+    var r = document.getElementById('region');
+    function showEducation(){
+        if (e.classList.contains('none')){
+            e.classList.remove('none');
+            r.classList.add('none');
+        }
+    }
+    function showRegion(){
+        if (r.classList.contains('none')){
+            r.classList.remove('none');
+            e.classList.add('none');
+        }
+    }
+</script>
+</body>
+</html>

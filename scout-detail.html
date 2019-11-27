@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Scout</title>
+
+<!--    Bootstrap-->
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!--    Custom CSS-->
+    <link rel="stylesheet" href="style/main.css">
+
+<body id="bs-override">
+
+<header>
+<p class="medium-font hfont" style="padding-top: 50px; padding-left:50px;"> Scout </p>
+</header>
+
+<main style="padding : 40px 100px 0 100px;">
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Region</th>
+            <th scope="col">Education</th>
+            <th scope="col">Workplace 1</th>
+            <th scope="col">Workplace 2</th>
+            <th scope="col">
+
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>
+                <a class="btn btn-primary text-white">Add</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>
+                <a class="btn btn-primary text-white">Add</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+<footer>
+</footer>
+
+<script>
+    var e = document.getElementById('education');
+    var r = document.getElementById('region');
+    function showEducation(){
+        if (e.classList.contains('none')){
+            e.classList.remove('none');
+            r.classList.add('none');
+        }
+    }
+    function showRegion(){
+        if (r.classList.contains('none')){
+            r.classList.remove('none');
+            e.classList.add('none');
+        }
+    }
+</script>
+</body>
+</html>
