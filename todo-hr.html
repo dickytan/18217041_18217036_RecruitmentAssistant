@@ -17,72 +17,17 @@
 
 <header>
     <p class="medium-font hfont" style="padding-top: 50px; padding-left:50px;"> To Do List </p>
+    <div id="test"></div>
 </header>
 
 <main style="padding : 40px 100px 0 100px;">
     <p class="font-sm pfont"> Dicky </p>
-    <form method="GET" id="newTaskForm"></form>
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th scope="col">No</th>
-            <th scope="col">Task</th>
-            <th scope="col">Due</th>
-            <th scope="col">Done</th>
-            <th scope="col"><!-- Button Put --></th>
-            <th scope="col"><!-- Button Delete --></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Wawancara</td>
-            <td>25 okt 2021</td>
-            <td>no</td>
-            <td>
-                <a class="btn btn-primary text-white">Change</a>
-            </td>
-            <td>
-                <a class="btn btn-primary text-white">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Wawancara</td>
-            <td>25 okt 2021</td>
-            <td>no</td>
-            <td>
-                <a class="btn btn-primary text-white">Change</a>
-            </td>
-            <td>
-                <a class="btn btn-primary text-white">Delete</a>
-            </td>
-        </tr>
-        <tr id="newTaskContainer">
-            <th><button onclick="newTask()" class="btn btn-primary text-white">New Task</button></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr class="none">
-            <th></th>
-        </tr>
-<!--        Form Add Task-->
-        <tr id="newTaskFormContainer" class="none">
-            <th>a</th>
-            <td><input type="text" name="task" form="newTaskForm" /></td>
-            <td><input type="text" name="due" form="newTaskForm" /></td>
-            <td><input type="text" name="done" form="newTaskForm" /></td>
-            <td>
-                <button onclick="newTask()" class="btn btn-primary text-white">Add Task</button>
-            </td>
-            <td></td>
-        </tr>
+    <form id="newTaskForm"></form>
 
-        </tbody>
-    </table>
+    <div id="table-todo">
+
+    </div>
+
 </main>
 
 <footer>
@@ -93,6 +38,108 @@
         document.getElementById('newTaskContainer').classList.add('none');
         document.getElementById('newTaskFormContainer').classList.remove('none');
     }
+
+    $(document).ready(function() {
+    let params = (new URL(document.location)).searchParams;
+    let hrid = params.get("id");
+    var iniurl;
+    if (hrid == 1){
+        iniurl = 'http://localhost:5000/task/hrid/1';
+    }
+    else if (hrid == 2){
+        iniurl = 'http://localhost:5000/task/hrid/2';
+    }
+    else if (hrid == 3){
+        iniurl = 'http://localhost:5000/task/hrid/3';
+    }
+
+    
+        $.ajax({
+            type: 'GET',
+            url: iniurl,
+            dataType: "json",
+            data: {
+        
+            },
+            success: function(data) {
+                console.log(data);
+                var b = JSON.parse(data);
+
+                console.log(b);
+                // var a = b.user_id;
+                // var unique = a.filter(function(itm, i, a) {
+                //     return i == a.indexOf(itm);
+                // });
+
+                // console.log(unique);
+
+                var tablefinal = $('<table class="table table-striped"></table>');
+                tablefinal.append(`
+                <thead>
+        <tr>
+            <th scope="col">No</th>
+            <th scope="col">Task</th>
+            <th scope="col">Due</th>
+            <th scope="col">Done</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+                `);
+                var tablebody = $('<tbody></tbody>');
+                $.each(data, function(i, item) {
+                    var table = $('<tr></tr>');
+                    var index = i+1;
+                    table.append('<th scope="row">'+ index +'</th>');
+                    table.append('<td>' + data[i].task + '</td>');
+                    table.append('<td>' + data[i].due + '</td>');
+                    table.append('<td>' + data[i].isdone + '</td>');
+                    table.append('<td> <button onclick="changeTask(&#34;' + data[i].acc_id + '&#34;)" class="btn btn-primary text-white">Change</button> </td>');
+                    table.append('<td> <button onclick="deleteTask(&#34;' + data[i].acc_id + '&#34;)" class="btn btn-primary text-white">Delete</button> </td>');
+                    tablebody.append(table);
+                });
+
+                tablefinal.append(tablebody);
+                tablefinal.append(`
+                
+        <tr id="newTaskContainer">
+            <th><button onclick="newTask()" class="btn btn-primary text-white">New Task</button></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+                `);
+
+                tablefinal.append(`
+                <tr class="none">
+            <th></th>
+        </tr>
+                        `);
+
+                        tablefinal.append(`
+                
+        <tr id="newTaskFormContainer" class="none">
+            <th>a</th>
+            <td><input type="text" name="task" form="newTaskForm" /></td>
+            <td><input type="text" name="due" form="newTaskForm" /></td>
+            <td><input type="text" name="done" form="newTaskForm" /></td>
+            <td>
+                <button onclick="newTask()" class="btn btn-primary text-white">Add Task</button>
+            </td>
+            <td></td>
+        </tr>
+                        `);
+
+
+                $('#table-todo').html(tablefinal);
+            }
+
+        });
+
+    });
+
 </script>
 
 </body>
