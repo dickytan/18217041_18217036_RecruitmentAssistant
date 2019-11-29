@@ -1,80 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>To Do List</title>
 
-<!--    Bootstrap-->
-    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.css">
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
 
-<!--    Custom CSS-->
-    <link rel="stylesheet" href="style/main.css">
+    <!--    Bootstrap-->
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
 
-<body id="bs-override">
+    <!--    Custom CSS-->
+    <link rel="stylesheet" href="style/main.css" />
+  </head>
+  <body id="bs-override">
+    <header>
+      <p
+        class="medium-font hfont"
+        style="padding-top: 50px; padding-left:50px;"
+      >
+        To Do List
+      </p>
+      <div id="test"></div>
+    </header>
 
-<header>
-    <p class="medium-font hfont" style="padding-top: 50px; padding-left:50px;"> To Do List </p>
-    <div id="test"></div>
-</header>
+    <main style="padding : 40px 100px 0 100px;">
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="addTaskForm"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                Change Task
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="taskForm">
+                <div class="form-group">
+                  <label for="idTask">Task</label>
+                  <input
+                    type="text"
+                    name="task"
+                    class="form-control"
+                    id="idTask"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter task"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="idDue">Due</label>
+                  <input
+                    type="text"
+                    name="due"
+                    class="form-control"
+                    id="idDue"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter due date"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Done</label>
+                  <input
+                    type="text"
+                    name="done"
+                    class="form-control"
+                    id="idDone"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter your HR ID"
+                  />
+                </div>
+                <button onclick="runChangeTask()" class="btn btn-primary">
+                  Submit
+                </button>
+              </form>
+            </div>
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
 
-<main style="padding : 40px 100px 0 100px;">
-    <p class="font-sm pfont"> Dicky </p>
-    <form id="newTaskForm"></form>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="addTaskForm"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                Change Task
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="taskForm">
+                <div class="form-group">
+                  <label for="idTask">Task</label>
+                  <input
+                    type="text"
+                    name="task"
+                    class="form-control"
+                    id="idTask"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter task"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="idDue">Due</label>
+                  <input
+                    type="text"
+                    name="due"
+                    class="form-control"
+                    id="idDue"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter due date"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Done</label>
+                  <input
+                    type="text"
+                    name="done"
+                    class="form-control"
+                    id="idDone"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter your HR ID"
+                  />
+                </div>
+                <button onclick="runChangeTask()" class="btn btn-primary">
+                  Submit
+                </button>
+              </form>
+            </div>
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
 
-    <div id="table-todo">
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="addNewTaskForm"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                Add Task
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="newtaskForm">
+                <div class="form-group">
+                  <label for="newTask">Task</label>
+                  <input
+                    type="text"
+                    name="task"
+                    class="form-control"
+                    id="newTask"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter task"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="newDue">Due</label>
+                  <input
+                    type="text"
+                    name="due"
+                    class="form-control"
+                    id="newDue"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter due date"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="newDone">Done</label>
+                  <input
+                    type="text"
+                    name="done"
+                    class="form-control"
+                    id="newDone"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter task status"
+                  />
+                </div>
+                <button onclick="runAddTask()" class="btn btn-primary">
+                  Submit
+                </button>
+              </form>
+            </div>
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
 
-    </div>
+      <div id="table-todo"></div>
+    </main>
 
-</main>
+    <footer></footer>
 
-<footer>
-</footer>
+    <script>
+      function getFormData($form) {
+        var unindexed_array = $form.serializeArray();
+        var indexed_array = {};
 
-<script>
-    function newTask(){
-        document.getElementById('newTaskContainer').classList.add('none');
-        document.getElementById('newTaskFormContainer').classList.remove('none');
-    }
+        $.map(unindexed_array, function(n, i) {
+          indexed_array[n["name"]] = n["value"];
+        });
 
-    $(document).ready(function() {
-    let params = (new URL(document.location)).searchParams;
-    let hrid = params.get("id");
-    var iniurl;
-    if (hrid == 1){
-        iniurl = 'http://localhost:5000/task/hrid/1';
-    }
-    else if (hrid == 2){
-        iniurl = 'http://localhost:5000/task/hrid/2';
-    }
-    else if (hrid == 3){
-        iniurl = 'http://localhost:5000/task/hrid/3';
-    }
+        return indexed_array;
+      }
 
-    
+      var userid;
+      var taskid;
+      var isdone;
+      var due;
+      var task;
+      let params = new URL(document.location).searchParams;
+      var hrid = params.get("id");
+
+      function changeTask(uid, t, i, d, tid) {
+        console.log(i);
+        console.log(t);
+        console.log(d);
+        console.log(uid);
+        console.log(tid);
+        $("#addTaskForm").modal("show");
+        userid = uid;
+        taskid = tid;
+        isdone = i;
+        due = d;
+        task = t;
+        $("#idTask").val(t);
+        $("#idDone").val(i);
+        $("#idDue").val(d);
+      }
+
+      function addnewTask(x) {
+        $("#addNewTaskForm").modal("show");
+        userid = x;
+      }
+
+      function deleteTask(uid, tid) {
+        userid = uid;
+        taskid = tid;
+        runDeleteTask();
+      }
+
+      $(document).ready(function() {
+        var iniurl;
+        if (hrid == 1) {
+          iniurl = "http://localhost:5000/task/hrid/1";
+        } else if (hrid == 2) {
+          iniurl = "http://localhost:5000/task/hrid/2";
+        } else if (hrid == 3) {
+          iniurl = "http://localhost:5000/task/hrid/3";
+        }
+
         $.ajax({
-            type: 'GET',
-            url: iniurl,
-            dataType: "json",
-            data: {
-        
-            },
-            success: function(data) {
-                console.log(data);
-                var b = JSON.parse(data);
+          type: "GET",
+          url: iniurl,
+          dataType: "json",
+          data: {},
+          success: function(data) {
+            console.log(data);
+            var flags = [],
+              output = [],
+              outputuid = [],
+              l = data.length,
+              i;
+            for (i = 0; i < l; i++) {
+              if (flags[data[i].acc_name]) continue;
+              flags[data[i].acc_name] = true;
+              output.push(data[i].acc_name);
+            }
+            console.log(output);
 
-                console.log(b);
-                // var a = b.user_id;
-                // var unique = a.filter(function(itm, i, a) {
-                //     return i == a.indexOf(itm);
-                // });
+            for (i = 0; i < l; i++) {
+              if (flags[data[i].user_id]) continue;
+              flags[data[i].user_id] = true;
+              outputuid.push(data[i].user_id);
+            }
+            console.log(outputuid);
 
-                // console.log(unique);
-
-                var tablefinal = $('<table class="table table-striped"></table>');
-                tablefinal.append(`
+            $.each(output, function(j, item) {
+              var tablefinalheader = $("<div></div>");
+              var header = $(`<p class="font-sm pfont">` + output[j] + `</p>`);
+              var tablefinal = $('<table class="table table-striped"></table>');
+              tablefinal.append(`
                 <thead>
         <tr>
             <th scope="col">No</th>
@@ -86,61 +355,165 @@
         </tr>
         </thead>
                 `);
-                var tablebody = $('<tbody></tbody>');
-                $.each(data, function(i, item) {
-                    var table = $('<tr></tr>');
-                    var index = i+1;
-                    table.append('<th scope="row">'+ index +'</th>');
-                    table.append('<td>' + data[i].task + '</td>');
-                    table.append('<td>' + data[i].due + '</td>');
-                    table.append('<td>' + data[i].isdone + '</td>');
-                    table.append('<td> <button onclick="changeTask(&#34;' + data[i].acc_id + '&#34;)" class="btn btn-primary text-white">Change</button> </td>');
-                    table.append('<td> <button onclick="deleteTask(&#34;' + data[i].acc_id + '&#34;)" class="btn btn-primary text-white">Delete</button> </td>');
-                    tablebody.append(table);
-                });
+              var tablebody = $("<tbody></tbody>");
+              var count = 0;
+              $.each(data, function(i, item) {
+                if (data[i].acc_name == output[j]) {
+                  count = count + 1;
+                  var stask = data[i].task;
+                  var sdue = data[i].due;
+                  var sdone = data[i].isdone;
 
-                tablefinal.append(tablebody);
-                tablefinal.append(`
+                  var table = $("<tr></tr>");
+                  table.append('<th scope="row">' + count + "</th>");
+                  table.append("<td>" + stask + "</td>");
+                  table.append("<td>" + sdue + "</td>");
+                  table.append("<td>" + sdone + "</td>");
+                  table.append(
+                    `<td> <button onclick="changeTask('` +
+                      data[i].user_id +
+                      `','` +
+                      stask +
+                      `','` +
+                      sdone +
+                      `','` +
+                      sdue +
+                      `','` +
+                      data[i].task_id +
+                      `')" class="btn btn-primary text-white">Change</button> </td>`
+                  );
+                  table.append(
+                    `<td> <button onclick="deleteTask('` +
+                      data[i].user_id +
+                      `','` +
+                      data[i].task_id +
+                      `')" class="btn btn-primary text-white">Delete</button> </td>`
+                  );
+                  tablebody.append(table);
+                }
+              });
+
+              tablefinal.append(tablebody);
+              tablefinal.append(
+                `
                 
         <tr id="newTaskContainer">
-            <th><button onclick="newTask()" class="btn btn-primary text-white">New Task</button></th>
+            <th><button onclick="addnewTask('` +
+                  outputuid[j] +
+                  `')" class="btn btn-primary text-white">New Task</button></th>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
         </tr>
-                `);
+                `
+              );
+              tablefinalheader.append(header);
+              tablefinalheader.append(tablefinal);
 
-                tablefinal.append(`
-                <tr class="none">
-            <th></th>
-        </tr>
-                        `);
-
-                        tablefinal.append(`
-                
-        <tr id="newTaskFormContainer" class="none">
-            <th>a</th>
-            <td><input type="text" name="task" form="newTaskForm" /></td>
-            <td><input type="text" name="due" form="newTaskForm" /></td>
-            <td><input type="text" name="done" form="newTaskForm" /></td>
-            <td>
-                <button onclick="newTask()" class="btn btn-primary text-white">Add Task</button>
-            </td>
-            <td></td>
-        </tr>
-                        `);
-
-
-                $('#table-todo').html(tablefinal);
-            }
-
+              $("#table-todo").append(tablefinalheader);
+            });
+          }
         });
+      });
 
-    });
+      $("#taskForm").submit(function(e) {
+        return false;
+      });
 
-</script>
+      $("#newTaskForm").submit(function(e) {
+        return false;
+      });
 
-</body>
+      $("#newtaskForm").submit(function(e) {
+        return false;
+      });
+
+      function runChangeTask() {
+        var obj = {
+          task: $("#idTask").val(),
+          isDone: $("#idDone").val(),
+          due: $("#idDue").val()
+        };
+        var sendData = JSON.stringify(obj);
+
+        $.ajax({
+          type: "PUT",
+          url:
+            "http://localhost:5000/task/" +
+            taskid +
+            "/hrid/" +
+            hrid +
+            "/uid/" +
+            userid,
+          dataType: "json",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          data: sendData,
+          success: function(data) {
+            console.log(data);
+            alert("task changed");
+            $("#idTask").val("");
+            $("#idDue").val("");
+            $("#idDone").val("");
+            $("#addTaskForm").modal("hide");
+            setTimeout(function() {
+              // wait for 5 secs(2)
+              location.reload(); // then reload the page.(3)
+            }, 2000);
+          }
+        });
+      }
+
+      function runDeleteTask() {
+        $.ajax({
+          type: "DELETE",
+          url: "http://localhost:5000/task/" + taskid + "/uid/" + userid,
+          dataType: "json",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          data: {},
+          success: function(data) {
+            console.log(data);
+            alert("task deleted");
+            setTimeout(function() {
+              // wait for 5 secs(2)
+              location.reload(); // then reload the page.(3)
+            }, 2000);
+          }
+        });
+      }
+
+      function runAddTask() {
+        var obj = {
+          task: $("#newTask").val(),
+          isDone: $("#newDone").val(),
+          due: $("#newDue").val()
+        };
+        var sendData = JSON.stringify(obj);
+
+        $.ajax({
+          type: "POST",
+          url: "http://localhost:5000/task/hrid/" + hrid + "/uid/" + userid,
+          dataType: "json",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          data: sendData,
+          success: function(data) {
+            console.log(data);
+            console.log(sendData);
+            alert("new task added");
+            setTimeout(function() {
+              // wait for 5 secs(2)
+              location.reload(); // then reload the page.(3)
+            }, 2000);
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
