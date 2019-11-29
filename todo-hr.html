@@ -32,7 +32,33 @@
     <link rel="stylesheet" href="style/main.css" />
   </head>
   <body id="bs-override">
-    <header>
+    <header style="margin-top : 100px;">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link pfont sm-font" href="scout.html">SCOUT</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link pfont sm-font" href="todo.html">TO DO</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
       <p
         class="medium-font hfont"
         style="padding-top: 50px; padding-left:50px;"
@@ -272,6 +298,7 @@
       var isdone;
       var due;
       var task;
+      var vusername;
       let params = new URL(document.location).searchParams;
       var hrid = params.get("id");
 
@@ -292,9 +319,10 @@
         $("#idDue").val(d);
       }
 
-      function addnewTask(x) {
+      function addnewTask(x, y) {
         $("#addNewTaskForm").modal("show");
-        userid = x;
+        vusername = x;
+        userid = y;
       }
 
       function deleteTask(uid, tid) {
@@ -399,6 +427,8 @@
                 
         <tr id="newTaskContainer">
             <th><button onclick="addnewTask('` +
+                  output[j] +
+                  `','` +
                   outputuid[j] +
                   `')" class="btn btn-primary text-white">New Task</button></th>
             <td></td>
@@ -491,7 +521,8 @@
         var obj = {
           task: $("#newTask").val(),
           isDone: $("#newDone").val(),
-          due: $("#newDue").val()
+          due: $("#newDue").val(),
+          acc_name: vusername
         };
         var sendData = JSON.stringify(obj);
 

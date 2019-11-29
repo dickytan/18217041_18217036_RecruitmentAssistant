@@ -53,7 +53,7 @@ def account():
     if request.method == 'GET':
         resp = make_response(DBManager.get_account(), 200)
     elif request.method == 'POST':
-        info = requests.get('http://3.227.193.57:8000/users/all')
+        info = requests.get('http://3.227.193.57:8001/users/all') #LinkedIn API
         resp = make_response(DBManager.add_account(info.json()), 200)
     resp.mimetype = "application/json"
     return resp
