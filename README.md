@@ -9,6 +9,12 @@ Aplikasi yang ditujukan untuk memudahkan recruiter dalam mendapatkan data pelama
 
 ## Aplikasi dapat diakses di sini: 
 http://3.227.193.57:5001/
+
+## Cara penggunaan aplikasi: 
+1.
+2.
+3.
+
 ## Dokumentasi API dapat diakses di sini: 
 https://orange-water-4285.postman.co/collections/9500366-9af4e0f7-a337-44f8-8c7f-74ee1bf53984?version=latest&workspace=187e2795-93e3-4d51-8989-cb9833937da0#3c85eae8-d209-4ac4-8aea-505358cd9177
 
@@ -33,6 +39,6 @@ https://orange-water-4285.postman.co/collections/9500366-9af4e0f7-a337-44f8-8c7f
 
 ## Tujuan jangka panjang
 
-
+Tujuan jangka panjang dari aplikasi ini adalah
 
 
