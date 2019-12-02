@@ -22,10 +22,10 @@ Recruitment Assistant: http://3.227.193.57:5001/
    > scout people untuk mendapatkan data calon pekerja yang berpotensi untuk di-approach dan
    > to-do list untuk melihat daftar tugas pengguna
 2. Jika pengguna memilih scout people, maka pengguna dapat memilih untuk mencari data calon pekerja berdasarkan region atau education
-3. Setelah mendapatkan data calon pekerja menggunakan API LinkedIn, Human Resource dapat membuat tugas yang harus dilakukan terhadap orang yang ingin di-approach dengan mengisi data HR ID, to-do/task dan deadline to-do/task.
+3. Setelah mendapatkan data calon pekerja sesuai dengan opsi yang dipilih(berdasarkan region/education), Human Resource dapat membuat tugas yang harus dilakukan terhadap orang yang ingin di-approach dengan mengisi data HR ID miliknya, to-do/task dan deadline to-do/task.
 4. Setelah menambahkan daftar tugas, pengguna dapat melihat tugas yang baru ditambahkan dengan memilih menu TO DO pada header
 5. Setelah menekan menu TO DO, pengguna dapat memilih untuk melihat daftar tugas HR1, HR2, dan HR3 (Asumsi: HR di perusahaan berjumlah 3 orang) // Jika pengguna adalah HR dengan nomor ID 1, maka daftar tugas pengguna tersebut terdapat di HR1
-6. Setelah masuk ke daftar tugas, pengguna dapat melihat daftar tugas, menambah daftar tugas, mengupdate status tugas menjadi telah selesai, dan menghapus daftar tugas tertentu.
+6. Setelah masuk ke daftar tugas, pengguna dapat melihat daftar tugas untuk masing-masing orang yang ingin di-approach. Dan user juga dapat menambah daftar tugas, mengupdate status tugas menjadi telah selesai, dan menghapus daftar tugas tertentu.
 
 ## Dokumentasi API dapat diakses di sini:
 https://orange-water-4285.postman.co/collections/9500366-9af4e0f7-a337-44f8-8c7f-74ee1bf53984?version=latest&workspace=187e2795-93e3-4d51-8989-cb9833937da0#3c85eae8-d209-4ac4-8aea-505358cd9177
@@ -70,11 +70,14 @@ https://orange-water-4285.postman.co/collections/9500366-9af4e0f7-a337-44f8-8c7f
 |Dicky   	        |Updated API's DELETE method                                |15 November 2019   	      |
 |Dicky   	        |Updated API's PUT method                                   |24 November 2019    	      |
 |Dicky   	        |Created API's documentation                                |24 November 2019  	        |
-|Johanes          |Created Apps' Interface                    	              |27 November 2019         	|
+|Johanes   	        |Created HTML Page                                |24 November 2019  	        |
+|Johanes   	        |Created CSS Styling                             |25 November 2019  	        |
+|Johanes   	      |Tested API - Front End Integration                                |26 November 2019  	        |
+|Johanes          |Finalized Front-End(App Interface)                   	              |27 November 2019         	|
 |Johanes          |Created Logic for Apps' Interface (GET and POST method)    |27 November 2019         	|
 |Dicky            |Deployed API to the testing environment                	  |28 November 2019         	|
 |Johanes          |Created Logic for Apps' Interface (PUT and DELETE method)  |28 November 2019         	|
 |Dicky & Johanes  |Tested back-end and front-end integration                 	|29 November 2019         	|
 |Dicky            |Deployed App                   	                          |30 November 2019         	|
 |Dicky            |Created Progress Report (README.md)                   	    |30 November 2019         	|
-|Dicky            |Finalized Progress Report (README.md)                  	  |2  Desember 2019         	|
+|Dicky & Johanes  |Finalized Progress Report (README.md)                  	  |2  Desember 2019         	|
