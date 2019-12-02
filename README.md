@@ -32,22 +32,32 @@ https://orange-water-4285.postman.co/collections/9500366-9af4e0f7-a337-44f8-8c7f
 
 ## Method API (file: endpoint.py dan function.py)
 ### To-do List API
-|Method |Link  	                                                            |Deskripsi  	                                             |
-|---	  |---	                                                              |---	                                                     |
+|Method |Link  	                                                          |Deskripsi  	                                             |
+|---	  |---	                                                             |---	                                                      |
 |GET    |http://3.227.193.57:5000/task                                      |Mengembalikan seluruh daftar tugas                        |
 |GET    |http://3.227.193.57:5000/task/hrid/<hr_id>                         |Mengembalikan daftar tugas berdasarkan ID HR              |
 |GET    |http://3.227.193.57:5000/task/hrid/<hr_id>/uid/<user_id>           |Mengembalikan daftar tugas berdasarkan HR ID dan User ID  |
 |POST   |http://3.227.193.57:5000/task/hrid/<hr_id>/uid/<user_id>           |Membuat daftar tugas berdasarkan HR ID dan User ID        |
-|PUT   	|http://3.227.193.57:5000/task/<task_id>/hrid/<hr_id>/uid/<user_id> |Mengubah daftar tugas berdasarkan Task ID, HR ID, User ID |
+|PUT    |http://3.227.193.57:5000/task/<task_id>/hrid/<hr_id>/uid/<user_id> |Mengubah daftar tugas berdasarkan Task ID, HR ID, User ID |
 |DELETE |http://3.227.193.57:5000/task/<task_id>/uid/<user_id>              |Menghapus daftar tugas berdasarkan task ID, HR ID, User ID|
 
+#### Contoh pemanggilan pada browser:
+1. http://3.227.193.57:5000/task
+2. http://3.227.193.57:5000/task/hrid/1
+3. http://3.227.193.57:5000/task/hrid/1/uid/6b00ab158
+
 ### LinkedIn API
-|Method |Link 	                                                            |Deskripsi  	                                             |
-|---	  |---	                                                              |---	                                                     |
+|Method |Link 	                                                             |Deskripsi  	                                             |
+|---	  |---	                                                             |---	                                                      |
 |GET    |http://3.227.193.57:5000/account                                   |Mengembalikan data calon pekerja (pengguna LinkedIn)      |
 |GET    |http://3.227.193.57:5000/account/education/<education>             |Mengembalikan data calon pekerja dengan edukasi tertentu  |
 |GET    |http://3.227.193.57:5000/account/region/<region>                   |Mengembalikan data calon pekerja dengan edukasi tertentu  |
 |POST   |http://3.227.193.57:5000/account                                   |Melakukan request ke API LinkedIn          `              |
+
+#### Contoh pemanggilan pada browser:
+1. http://3.227.193.57:5000/account
+2. http://3.227.193.57:5000/account/education/Institut%20Teknologi%20Bandung
+3. http://3.227.193.57:5000/account/region/Jakarta
 
 ## Log
 |Nama   	        |Aktivitas Commit   	                                      |Tanggal  	                |
