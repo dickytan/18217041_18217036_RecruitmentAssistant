@@ -63,7 +63,7 @@ https://orange-water-4285.postman.co/collections/9500366-9af4e0f7-a337-44f8-8c7f
 |Nama   	        |Aktivitas Commit   	                                      |Tanggal  	                |
 |---	            |---	                                                      |---	                      |
 |Dicky & Johanes  |Designed API integration                                   |12 November 2019          	|
-|Dicky & Johanes  |Revised API integration Design                             |14 November 2019          	|
+|Dicky & Johanes |Revised API integration Design                             |14 November 2019          	|
 |Dicky   	        |Created remote repository (Github)                         |14 November 2019          	|
 |Dicky   	        |Created local database (postgreSQL)                        |14 November 2019          	|
 |Dicky   	        |Integrated API Todo with API LinkedIn                      |14 November 2019          	|
@@ -81,3 +81,5 @@ https://orange-water-4285.postman.co/collections/9500366-9af4e0f7-a337-44f8-8c7f
 |Dicky            |Deployed App                   	                          |30 November 2019         	|
 |Dicky            |Created Progress Report (README.md)                   	    |30 November 2019         	|
 |Dicky & Johanes  |Finalized Progress Report (README.md)                  	  |2  Desember 2019         	|
+|Dicky & Johanes  |Finalized Progress Report (README.md)                  	  |2  Desember 2019         	|
+|Dicky & Johanes  |Revised Progress Report (README.md)                  	  |15  Desember 2019         	|
