@@ -1,0 +1,113 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/Open_Sans/OpenSans-Regular.ttf")
+}
+
+@font-face {
+    font-family: "Proza Libre";
+    src: url("../fonts/Proza_Libre/ProzaLibre-Regular.ttf")
+}
+
+.hfont{
+    font-family: "Proza Libre", serif;
+}
+
+.pfont{
+    font-family: "Open Sans", serif;
+}
+
+.big-font{
+    font-size : 60px;
+}
+
+.small-font{
+    font-size:16px;
+}
+
+.font-sm{
+    font-size:30px;
+}
+
+.medium-font{
+    font-size:40px;
+}
+
+.bg-color-full{
+    background-color: #005cbf;
+    width: 100%;
+    height:100vh;
+    z-index:-1;
+    position:absolute;
+    top:0;
+}
+
+p{
+    margin : 0;
+    padding : 0;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.bg-color-animate{
+    animation-name: name2;
+    animation-delay:1.8s;
+    -webkit-animation-fill-mode: forwards;
+    animation-duration:1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes name2 {
+    from {height:100vh;}
+    to {height:60vh;}
+}
+
+.title-animate {
+    animation-name: name1;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes name1 {
+    from {top:50%}
+    to {top:25%}
+}
+
+.ag-card-md{
+    background-color: white;
+    width:200px;
+    height:150px;
+    box-shadow: 3px 3px 3px #787878;
+    border-radius:25px;
+    line-height:50px;
+    color: black;
+}
+
+.ag-card-sm{
+    background-color: white;
+    width:120px;
+    height:90px;
+    box-shadow: 3px 3px 3px #787878;
+    border-radius:25px;
+    line-height:30px;
+    color: black;
+}
+
+.bg-color-half{
+    background-color: #005cbf;
+    width: 100%;
+    height:60vh;
+    z-index:-1;
+    position:absolute;
+    top:0;
+}
+
+.none{
+    display:none;
+}

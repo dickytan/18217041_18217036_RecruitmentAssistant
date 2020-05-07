@@ -78,9 +78,9 @@ class DBManager:
         conn = DBManager.connect()
         try:
             cur = conn.cursor(cursor_factory=RealDictCursor)
-            query = """ INSERT INTO todo(hr_id,user_id, task, isDone, due) VALUES ( %(hi)s,  %(ui)s, %(t)s, %(i)s, %(d)s) """
+            query = """ INSERT INTO todo(hr_id,user_id, task, isDone, due, acc_name) VALUES ( %(hi)s,  %(ui)s, %(t)s, %(i)s, %(d)s, %(an)s) """
             values = {'hi': hr_id, 'ui': user_id,
-                      't': request['task'], 'i': request['isDone'], 'd': request['due']}
+                      't': request['task'], 'i': request['isDone'], 'd': request['due'], 'an': request['acc_name']}
             dump = [{'Message': 'Success to insert record'}]
             cur.execute(query, values)
             conn.commit()
